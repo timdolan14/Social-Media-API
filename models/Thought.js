@@ -58,6 +58,7 @@ const thoughtSchema = new Schema(
     });
 
 
+// TBD
 thoughtSchema.virtual('reactions').get(function () { });
 
 const Thought = model("thought", thoughtSchema)

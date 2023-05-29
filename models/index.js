@@ -1,4 +1,5 @@
-// Establish vars and then add to exports
-// Make seperate files for vars
+const User = require("./User");
+const Thought = require("./Thought");
 
-module.exports = {};
+
+module.exports = {User, Thought};
