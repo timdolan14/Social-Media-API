@@ -18,7 +18,10 @@ const reactionSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            default: Date.now(),
+            get: function (timestamp) {
+                return new Date(timestamp).toLocaleString();
+            }
             // getter method for timestamp
         },
     },
@@ -40,8 +43,10 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now,
-            // getter method for timestamp
+            default: Date.now(),
+            get: function (timestamp) {
+                return new Date(timestamp).toLocaleString();
+            }
         },
         username: {
             type: String,
