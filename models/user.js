@@ -37,7 +37,9 @@ const userSchema = new Schema(
     });
 
 // TBD
-userSchema.virtual('friends').get(function () { });
+userSchema.virtual('friends').get(function () { 
+    return this.friends.length;
+});
 
 const User = model("User", userSchema);
 
