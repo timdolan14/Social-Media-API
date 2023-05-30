@@ -58,8 +58,7 @@ const thoughtSchema = new Schema(
     });
 
 
-// TBD
-thoughtSchema.virtual('reactions').get(function () { 
+thoughtSchema.virtual('reactionNumber').get(function () { 
     return this.reactions.length;
 });
 
