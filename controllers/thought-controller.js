@@ -53,4 +53,17 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    async addReaction(req, res) {
+        try {
+            const thought = await Thought.findOneAndUpdate({ _id: req.params.thoughtId },
+                { $addToSet: { reactions: req.params.reactionId } },
+                { runValidators: true, new: true });
+            if (!thought) {
+                return res.status(404).json({ message: 'No Thought with that ID!' });
+            }
+            res.json(thought);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
 };
