@@ -26,14 +26,14 @@ module.exports = {
             const user = await User.create(req.body);
             if (!user) {
                 return res.status(404).json({
-                  message: 'Invalid!',
+                    message: 'Invalid!',
                 })
-              }
-              res.json('User has been created');
-            } catch (err) {
-              console.log(err);
-              res.status(500).json(err);
             }
+            res.json('User has been created');
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
     },
     async updateUser(req, res) {
         try {
@@ -57,4 +57,17 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    async addFriend(req, res) {
+        try {
+            const user = await User.findOneAndUpdate({ _id: req.userId },
+                { $addToSet: { friend: req.friendsId } },
+                { runValidators: true, new: true });
+            if (!user) {
+                return res.status(404).json({ message: 'No User with that ID!' });
+            }
+            res.json('User has been Updated');
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    }
 };

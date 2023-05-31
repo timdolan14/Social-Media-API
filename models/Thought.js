@@ -22,7 +22,6 @@ const reactionSchema = new Schema(
             get: function (timestamp) {
                 return new Date(timestamp).toLocaleString();
             }
-            // getter method for timestamp
         },
     },
     {
