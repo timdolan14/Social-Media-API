@@ -65,7 +65,7 @@ module.exports = {
             if (!user) {
                 return res.status(404).json({ message: 'No User with that ID!' });
             }
-            res.json(user);
+            res.json('Friend has been added!');
         } catch (err) {
             res.status(500).json(err);
         }
@@ -78,7 +78,7 @@ module.exports = {
             if (!user) {
                 return res.status(404).json({ message: 'No User with that ID!' });
             }
-            res.json(user);
+            res.json('Friend has been deleted!');
         } catch (err) {
             res.status(500).json(err);
         }
