@@ -14,10 +14,10 @@ router.route('/').get(getThoughts).post(createThought);
 
 // /api/thoughts/:id
 router
-.route('/:thoughtsId')
-.get(getSingleThought)
-.put(updateThought)
-.delete(deleteThought);
+    .route('/:thoughtsId')
+    .get(getSingleThought)
+    .put(updateThought)
+    .delete(deleteThought);
 
 // /api/thoughts/:thoughtId/reactions
 router.route('/:thoughtId/reactions').post(addReaction);

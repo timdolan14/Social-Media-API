@@ -14,10 +14,10 @@ router.route('/').get(getUser).post(createUser);
 
 // /api/users/:userid
 router
-.route('/:userId')
-.get(getSingleUser)
-.put(updateUser)
-.delete(deleteUser);
+    .route('/:userId')
+    .get(getSingleUser)
+    .put(updateUser)
+    .delete(deleteUser);
 
 // /api/users/:userId/friends/:friendId
 router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend);
